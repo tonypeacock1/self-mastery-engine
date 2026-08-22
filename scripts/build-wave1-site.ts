@@ -1,84 +1,173 @@
 /**
- * Wave 1 PSL build using voice-contract content (sa_content_voice_v1).
+ * Wave 1 PSL build — all voice-contract pages (sa_content_voice_v1).
  *
+ *   npm run build:wave1
  *   npx tsx scripts/build-wave1-site.ts
  *
- * Uses wave1_content.ts bodies generated under SA_CONTENT_RUNTIME_SYSTEM_PROMPT.
  * Output: ./dist-wave1/
  */
 import { writeFileSync, mkdirSync } from 'fs';
 import { join } from 'path';
-import { DianeticsPslBuilder } from '../src/modules/dianetics/dianetics_psl_builder';
+import { DianeticsPslBuilder, SpokeConfig } from '../src/modules/dianetics/dianetics_psl_builder';
 import {
   VOICE_CONTRACT,
   SELF_MASTERY_PILLAR_BODY,
-  EXECUTIVE_BURNOUT_JHB_BODY
+  EXECUTIVE_BURNOUT_PILLAR_BODY,
+  EXECUTIVE_BURNOUT_JHB_BODY,
+  CANT_SWITCH_OFF_BODY,
+  STOP_SNAPPING_BODY,
+  SUCCESSFUL_BUT_EMPTY_BODY
 } from '../src/modules/dianetics/wave1_content';
-import { buildPageBrief } from '../src/modules/dianetics/page_brief';
+import { buildPageBrief, BuildPageBriefInput } from '../src/modules/dianetics/page_brief';
 import { packageForPsl, validateBodyHtmlAgainstVoice } from '../src/modules/dianetics/content_agent';
 
 const OUT_DIR = join(process.cwd(), 'dist-wave1');
 
-// Pillar brief + body (self mastery)
-const pillarBrief = buildPageBrief({
-  briefId: 'self-mastery-sa-pillar',
-  role: 'pillar',
-  primaryKeyword: 'self mastery for high performers',
-  secondaryKeywords: ['self mastery', 'composure for professionals South Africa'],
-  serpOpportunity: 'HIGH',
-  cluster: 'self_mastery_performance',
-  hubId: 'gauteng_central'
-});
-
-const pillarFails = validateBodyHtmlAgainstVoice(SELF_MASTERY_PILLAR_BODY);
-if (pillarFails.length) {
-  console.error('Pillar voice validation failed:', pillarFails);
-  process.exit(1);
+interface PageSpec {
+  input: BuildPageBriefInput;
+  body: string;
+  filename?: string;
+  cityKey?: string;
 }
-const pillar = packageForPsl(pillarBrief, SELF_MASTERY_PILLAR_BODY);
 
-// Johannesburg spoke
-const jhbBrief = buildPageBrief({
-  briefId: 'executive-burnout-johannesburg',
-  role: 'spoke',
-  primaryKeyword: 'executive burnout recovery Johannesburg',
-  secondaryKeywords: ['high performer stress Johannesburg'],
-  serpOpportunity: 'HIGH',
-  cluster: 'burnout_exhaustion',
-  geo: 'Johannesburg',
-  hubId: 'gauteng_central'
-});
-const jhbFails = validateBodyHtmlAgainstVoice(EXECUTIVE_BURNOUT_JHB_BODY);
-if (jhbFails.length) {
-  console.error('JHB voice validation failed:', jhbFails);
-  process.exit(1);
+const pages: PageSpec[] = [
+  {
+    input: {
+      briefId: 'self-mastery-sa-pillar',
+      role: 'pillar',
+      primaryKeyword: 'self mastery for high performers',
+      secondaryKeywords: ['self mastery', 'composure for professionals South Africa'],
+      serpOpportunity: 'HIGH',
+      cluster: 'self_mastery_performance',
+      hubId: 'gauteng_central'
+    },
+    body: SELF_MASTERY_PILLAR_BODY
+  },
+  {
+    input: {
+      briefId: 'executive-burnout-johannesburg',
+      role: 'spoke',
+      primaryKeyword: 'executive burnout recovery Johannesburg',
+      secondaryKeywords: ['high performer stress Johannesburg'],
+      serpOpportunity: 'HIGH',
+      cluster: 'burnout_exhaustion',
+      geo: 'Johannesburg',
+      hubId: 'gauteng_central'
+    },
+    body: EXECUTIVE_BURNOUT_JHB_BODY,
+    filename: 'johannesburg.html',
+    cityKey: 'Johannesburg'
+  },
+  {
+    input: {
+      briefId: 'executive-burnout-recovery-sa',
+      role: 'spoke',
+      primaryKeyword: 'executive burnout recovery',
+      secondaryKeywords: ['burnout recovery South Africa', 'high functioning burnout'],
+      serpOpportunity: 'HIGH',
+      cluster: 'burnout_exhaustion',
+      hubId: 'gauteng_central'
+    },
+    body: EXECUTIVE_BURNOUT_PILLAR_BODY,
+    filename: 'executive-burnout-recovery.html',
+    cityKey: 'Burnout recovery'
+  },
+  {
+    input: {
+      briefId: 'cant-switch-off',
+      role: 'spoke',
+      primaryKeyword: "can't switch off from work",
+      secondaryKeywords: ['why am I still exhausted after sleeping', "burned out but can't quit"],
+      serpOpportunity: 'HIGH',
+      cluster: 'sa_trapped_stress',
+      hubId: 'gauteng_central'
+    },
+    body: CANT_SWITCH_OFF_BODY,
+    filename: 'cant-switch-off.html',
+    cityKey: "Can't switch off"
+  },
+  {
+    input: {
+      briefId: 'short-temper-reactivity',
+      role: 'spoke',
+      primaryKeyword: 'how to stop snapping at people',
+      secondaryKeywords: ['short temper', 'why do I overreact to small things'],
+      serpOpportunity: 'HIGH',
+      cluster: 'reactivity_composure',
+      hubId: 'gauteng_central'
+    },
+    body: STOP_SNAPPING_BODY,
+    filename: 'stop-snapping.html',
+    cityKey: 'Stop snapping'
+  },
+  {
+    input: {
+      briefId: 'successful-but-empty',
+      role: 'spoke',
+      primaryKeyword: 'successful but empty',
+      secondaryKeywords: ['high achiever emptiness', 'why do successful people feel empty'],
+      serpOpportunity: 'HIGH',
+      cluster: 'successful_empty',
+      hubId: 'gauteng_central'
+    },
+    body: SUCCESSFUL_BUT_EMPTY_BODY,
+    filename: 'successful-but-empty.html',
+    cityKey: 'Successful but empty'
+  }
+];
+
+const packagedPages: { briefId: string; path: string; h1: string; title: string }[] = [];
+const spokes: SpokeConfig[] = [];
+let pillarTitle = '';
+let pillarH1 = '';
+let pillarMeta = '';
+let pillarBody = '';
+
+for (const page of pages) {
+  const fails = validateBodyHtmlAgainstVoice(page.body);
+  if (fails.length) {
+    console.error(`Voice validation failed for ${page.input.briefId}:`, fails);
+    process.exit(1);
+  }
+  const brief = buildPageBrief(page.input);
+  const packaged = packageForPsl(brief, page.body);
+
+  if (!page.filename) {
+    pillarTitle = packaged.title;
+    pillarH1 = packaged.h1;
+    pillarMeta = packaged.metaDesc;
+    pillarBody = packaged.bodyHtml;
+    packagedPages.push({ briefId: packaged.briefId, path: '/', h1: packaged.h1, title: packaged.title });
+  } else {
+    spokes.push({
+      filename: page.filename,
+      cityKey: page.cityKey || page.filename,
+      title: packaged.title,
+      h1: packaged.h1,
+      metaDesc: packaged.metaDesc,
+      bodyHtml: packaged.bodyHtml,
+      hubId: packaged.hubId || 'gauteng_central'
+    });
+    packagedPages.push({
+      briefId: packaged.briefId,
+      path: `/${page.filename}`,
+      h1: packaged.h1,
+      title: packaged.title
+    });
+  }
+  console.log('OK', packaged.briefId, '→', packaged.h1);
 }
-const jhb = packageForPsl(jhbBrief, EXECUTIVE_BURNOUT_JHB_BODY);
-
-console.log('Voice contract:', VOICE_CONTRACT);
-console.log('Pillar packaged:', pillar.briefId, pillar.h1);
-console.log('Spoke packaged:', jhb.briefId, jhb.h1);
 
 const builder = new DianeticsPslBuilder({
   siteSlug: 'self-mastery-sa',
   baseUrl: 'https://self-mastery-sa.pages.dev',
   platform: 'cloudflare-pages',
   workerOrigin: '',
-  pillarTitle: pillar.title,
-  pillarH1: pillar.h1,
-  pillarMetaDesc: pillar.metaDesc,
-  pillarBodyHtml: pillar.bodyHtml,
-  spokes: [
-    {
-      filename: 'johannesburg.html',
-      cityKey: 'Johannesburg',
-      title: jhb.title,
-      h1: jhb.h1,
-      metaDesc: jhb.metaDesc,
-      bodyHtml: jhb.bodyHtml,
-      hubId: jhb.hubId || 'gauteng_central'
-    }
-  ]
+  pillarTitle,
+  pillarH1,
+  pillarMetaDesc: pillarMeta,
+  pillarBodyHtml: pillarBody,
+  spokes
 });
 
 const files = builder.build();
@@ -88,16 +177,13 @@ for (const [path, content] of Object.entries(files)) {
   console.log('Wrote', path, `(${content.length} bytes)`);
 }
 
-// Manifest for CI / control panel
 writeFileSync(
   join(OUT_DIR, 'content-manifest.json'),
   JSON.stringify(
     {
       voiceContract: VOICE_CONTRACT,
-      pages: [
-        { briefId: pillar.briefId, path: '/', h1: pillar.h1 },
-        { briefId: jhb.briefId, path: '/johannesburg.html', h1: jhb.h1 }
-      ],
+      baseUrl: 'https://self-mastery-sa.pages.dev',
+      pages: packagedPages,
       builtAt: new Date().toISOString()
     },
     null,
@@ -106,5 +192,5 @@ writeFileSync(
   'utf8'
 );
 
-console.log('\nWave 1 site written to', OUT_DIR);
-console.log('All bodies passed validateBodyHtmlAgainstVoice.');
+console.log('\nWave 1 full SILO written to', OUT_DIR);
+console.log(`Pages: ${packagedPages.length} | voiceContract: ${VOICE_CONTRACT}`);

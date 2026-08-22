@@ -5,3 +5,8 @@
 *.pem
 wrangler.toml.bak
 .vault/
+
+node_modules/
+dist/
+dist-example/
+.wrangler/

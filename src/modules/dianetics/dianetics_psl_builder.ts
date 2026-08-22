@@ -310,7 +310,8 @@ ${opts.bodyHtml}
           name: hub.accountHolder,
           address: {
             '@type': 'PostalAddress',
-            streetAddress: hub.auditingCenterAddress
+            addressCountry: 'ZA',
+            addressRegion: hub.regionName
           }
         },
         shippingDetails: {

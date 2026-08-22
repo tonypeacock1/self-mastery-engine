@@ -61,8 +61,19 @@ export interface BuildPageBriefInput {
 }
 
 function titleCaseKeyword(kw: string): string {
-  // Keep natural casing for multi-word problem phrases; only light cleanup
-  return kw.trim().replace(/\s+/g, ' ');
+  // Display casing for titles/H1s: capitalise words, keep small connectors lower
+  const small = new Set(['a', 'an', 'the', 'and', 'or', 'for', 'to', 'of', 'in', 'on', 'at', 'from', 'but']);
+  const parts = kw.trim().replace(/\s+/g, ' ').split(' ');
+  return parts
+    .map((w, i) => {
+      const lower = w.toLowerCase();
+      if (i > 0 && small.has(lower)) return lower;
+      if (lower === "can't" || lower === "doesn't" || lower === "won't") {
+        return lower.charAt(0).toUpperCase() + lower.slice(1);
+      }
+      return lower.charAt(0).toUpperCase() + lower.slice(1);
+    })
+    .join(' ');
 }
 
 function buildTitle(primary: string, geo: string, role: PageRole): string {

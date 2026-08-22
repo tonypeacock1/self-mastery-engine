@@ -11,8 +11,19 @@
     "rootDir": ".",
     "declaration": true,
     "resolveJsonModule": true,
-    "types": ["@cloudflare/workers-types"]
+    "types": [
+      "@cloudflare/workers-types",
+      "node"
+    ]
   },
-  "include": ["src/**/*", "scripts/**/*", "worker/**/*"],
-  "exclude": ["node_modules", "dist", "dist-example"]
+  "include": [
+    "src/**/*",
+    "scripts/**/*",
+    "worker/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "dist-example"
+  ]
 }

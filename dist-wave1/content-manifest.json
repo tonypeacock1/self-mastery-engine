@@ -1,0 +1,43 @@
+{
+  "voiceContract": "sa_content_voice_v1",
+  "baseUrl": "https://self-mastery-sa.pages.dev",
+  "pages": [
+    {
+      "briefId": "self-mastery-sa-pillar",
+      "path": "/",
+      "h1": "Self Mastery for High Performers",
+      "title": "Self Mastery for High Performers | South Africa"
+    },
+    {
+      "briefId": "executive-burnout-johannesburg",
+      "path": "/johannesburg.html",
+      "h1": "Executive Burnout Recovery Johannesburg",
+      "title": "Executive Burnout Recovery Johannesburg | Johannesburg, South Africa"
+    },
+    {
+      "briefId": "executive-burnout-recovery-sa",
+      "path": "/executive-burnout-recovery.html",
+      "h1": "Executive Burnout Recovery",
+      "title": "Executive Burnout Recovery | Self-Mastery SA"
+    },
+    {
+      "briefId": "cant-switch-off",
+      "path": "/cant-switch-off.html",
+      "h1": "Can't Switch Off from Work",
+      "title": "Can't Switch Off from Work | Self-Mastery SA"
+    },
+    {
+      "briefId": "short-temper-reactivity",
+      "path": "/stop-snapping.html",
+      "h1": "How to Stop Snapping at People",
+      "title": "How to Stop Snapping at People | Self-Mastery SA"
+    },
+    {
+      "briefId": "successful-but-empty",
+      "path": "/successful-but-empty.html",
+      "h1": "Successful but Empty",
+      "title": "Successful but Empty | Self-Mastery SA"
+    }
+  ],
+  "builtAt": "2026-08-22T11:06:46.405Z"
+}

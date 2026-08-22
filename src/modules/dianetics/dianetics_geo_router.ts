@@ -102,9 +102,8 @@ export default {
                   `Address: ${order.address}, ${order.suburb}, ${order.city}`,
                   `Amount: R400.00 ZAR`,
                   `Dispatch Hub: ${bankInfo.regionName}`,
-                  `Auditing Center: ${bankInfo.auditingCenterAddress}`,
                   '',
-                  'Ship via Takealot / Express Courier within 24 hours.',
+                  'Ship via Express Courier within 24 hours.',
                   'Confirm tracking back to this system when available.'
                 ].join('\n')
               }]
@@ -135,7 +134,6 @@ export default {
               },
               fulfillment: {
                 targetHub: bankInfo.hubId,
-                auditingAddress: bankInfo.auditingCenterAddress,
                 regionName: bankInfo.regionName
               },
               amountZar: 400,
