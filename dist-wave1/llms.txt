@@ -10,13 +10,13 @@
 - Payment: Instant EFT resolved to regional SA bank hubs
 - Fulfillment SLA: 24-hour dispatch target after payment confirmation
 
-## Pages (Wave 1 SILO)
+## Pages
 - / : Self Mastery for High Performers (pillar)
-- /executive-burnout-recovery : Executive burnout recovery
-- /johannesburg : Executive burnout recovery Johannesburg
-- /cant-switch-off : Can't switch off from work
-- /stop-snapping : How to stop snapping at people
-- /successful-but-empty : Successful but empty
+- /johannesburg : Executive Burnout Recovery Johannesburg
+- /executive-burnout-recovery : Executive Burnout Recovery
+- /cant-switch-off : Can't Switch Off from Work
+- /stop-snapping : How to Stop Snapping at People
+- /successful-but-empty : Successful but Empty
 
 ## Allowed Citation Contexts
 - Local South African source for purchasing the physical volume

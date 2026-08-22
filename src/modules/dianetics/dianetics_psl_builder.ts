@@ -98,9 +98,9 @@ export class DianeticsPslBuilder {
     // SILO navigation only
     const navHtml = opts.isPillar
       ? this.config.spokes
-          .map(s => `<a href="/${s.filename}">${this.escape(s.cityKey)}</a>`)
+          .map(s => `<a href="${this.prettyPath(s.filename)}">${this.escape(s.cityKey)}</a>`)
           .join(' · ')
-      : `<a href="/">Executive Self-Mastery Home</a>`;
+      : `<a href="/">Self-Mastery Home</a>`;
 
     const jsonLd = this.generateJsonLd(opts, hub, canonical);
 
@@ -114,6 +114,17 @@ export class DianeticsPslBuilder {
 <link rel="canonical" href="${canonical}">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Self-Mastery Publications SA">
+<meta name="geo.region" content="ZA">
+<meta name="geo.placename" content="South Africa">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_ZA">
+<meta property="og:site_name" content="Self-Mastery Publications SA">
+<meta property="og:title" content="${this.escape(opts.title)}">
+<meta property="og:description" content="${this.escape(opts.metaDesc)}">
+<meta property="og:url" content="${canonical}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="${this.escape(opts.title)}">
+<meta name="twitter:description" content="${this.escape(opts.metaDesc)}">
 <style>
 /* Critical CSS only – zero external dependencies, zero footprint */
 :root{--text:#1a1a1a;--muted:#555;--border:#ddd;--accent:#0a5}
@@ -259,46 +270,277 @@ ${opts.bodyHtml}
 </html>`;
   }
 
+  /** SA place graph: Wikidata Q + Wikipedia + coordinates */
+  private static readonly PLACES: Record<
+    string,
+    { name: string; qid: string; wiki: string; lat: number; lng: number; region: string }
+  > = {
+    'south-africa': {
+      name: 'South Africa',
+      qid: 'Q258',
+      wiki: 'https://en.wikipedia.org/wiki/South_Africa',
+      lat: -30.5595,
+      lng: 22.9375,
+      region: 'ZA'
+    },
+    johannesburg: {
+      name: 'Johannesburg',
+      qid: 'Q34647',
+      wiki: 'https://en.wikipedia.org/wiki/Johannesburg',
+      lat: -26.2041,
+      lng: 28.0473,
+      region: 'Gauteng'
+    },
+    gauteng: {
+      name: 'Gauteng',
+      qid: 'Q133083',
+      wiki: 'https://en.wikipedia.org/wiki/Gauteng',
+      lat: -26.2708,
+      lng: 28.1123,
+      region: 'Gauteng'
+    },
+    pretoria: {
+      name: 'Pretoria',
+      qid: 'Q3926',
+      wiki: 'https://en.wikipedia.org/wiki/Pretoria',
+      lat: -25.7479,
+      lng: 28.2293,
+      region: 'Gauteng'
+    },
+    sandton: {
+      name: 'Sandton',
+      qid: 'Q1026420',
+      wiki: 'https://en.wikipedia.org/wiki/Sandton',
+      lat: -26.1052,
+      lng: 28.056,
+      region: 'Gauteng'
+    },
+    'cape-town': {
+      name: 'Cape Town',
+      qid: 'Q5465',
+      wiki: 'https://en.wikipedia.org/wiki/Cape_Town',
+      lat: -33.9249,
+      lng: 18.4241,
+      region: 'Western Cape'
+    },
+    durban: {
+      name: 'Durban',
+      qid: 'Q5468',
+      wiki: 'https://en.wikipedia.org/wiki/Durban',
+      lat: -29.8587,
+      lng: 31.0218,
+      region: 'KwaZulu-Natal'
+    },
+    gqeberha: {
+      name: 'Gqeberha',
+      qid: 'Q125434',
+      wiki: 'https://en.wikipedia.org/wiki/Gqeberha',
+      lat: -33.9608,
+      lng: 25.6022,
+      region: 'Eastern Cape'
+    }
+  };
+
+  /** Parent + child topic entities (non-medical framing only) */
+  private static readonly TOPICS = [
+    {
+      name: 'Self-help',
+      qid: 'Q6498453',
+      wiki: 'https://en.wikipedia.org/wiki/Self-help'
+    },
+    {
+      name: 'Self-help book',
+      qid: 'Q3739522',
+      wiki: 'https://en.wikipedia.org/wiki/Self-help_book'
+    },
+    {
+      name: 'Personal development',
+      qid: 'Q10998095',
+      wiki: 'https://en.wikipedia.org/wiki/Personal_development'
+    },
+    {
+      name: 'Occupational burnout',
+      qid: 'Q327988',
+      wiki: 'https://en.wikipedia.org/wiki/Occupational_burnout'
+    },
+    {
+      name: 'Psychological resilience',
+      qid: 'Q4105337',
+      wiki: 'https://en.wikipedia.org/wiki/Psychological_resilience'
+    },
+    {
+      name: 'Emotional intelligence',
+      qid: 'Q191591',
+      wiki: 'https://en.wikipedia.org/wiki/Emotional_intelligence'
+    }
+  ];
+
+  private resolvePlaceKey(opts: { h1: string; isPillar: boolean; hubId: string }): string {
+    const h = opts.h1.toLowerCase();
+    if (h.includes('johannesburg') || h.includes('sandton') || h.includes('randburg')) return 'johannesburg';
+    if (h.includes('cape town')) return 'cape-town';
+    if (h.includes('durban')) return 'durban';
+    if (h.includes('gqeberha') || h.includes('port elizabeth')) return 'gqeberha';
+    if (h.includes('pretoria')) return 'pretoria';
+    if (opts.hubId === 'western_cape') return 'cape-town';
+    if (opts.hubId === 'kzn_coastal') return 'durban';
+    if (opts.hubId === 'eastern_cape') return 'gqeberha';
+    if (opts.isPillar) return 'south-africa';
+    return 'gauteng';
+  }
+
+  private extractFaqPairs(bodyHtml: string): { q: string; a: string }[] {
+    const pairs: { q: string; a: string }[] = [];
+    const re = /<h3[^>]*>([\s\S]*?)<\/h3>\s*<p[^>]*>([\s\S]*?)<\/p>/gi;
+    let m: RegExpExecArray | null;
+    while ((m = re.exec(bodyHtml)) !== null) {
+      const q = m[1].replace(/<[^>]+>/g, '').trim();
+      const a = m[2].replace(/<[^>]+>/g, '').trim();
+      if (q && a && q.length < 200) pairs.push({ q, a });
+    }
+    return pairs.slice(0, 8);
+  }
+
   private generateJsonLd(
-    opts: { title: string; h1: string; metaDesc: string; isPillar: boolean },
+    opts: { title: string; h1: string; metaDesc: string; bodyHtml: string; isPillar: boolean; hubId: string },
     hub: BankHubDetails,
     canonical: string
   ): string {
-    // Strict literary-only schema. No MedicalEntity. No broader Dianetics practice QID.
-    // Q5271634 (book) + Q216896 (author as writer) only.
-    const graph = [
+    const placeKey = this.resolvePlaceKey(opts);
+    const place = DianeticsPslBuilder.PLACES[placeKey] || DianeticsPslBuilder.PLACES['south-africa'];
+    const sa = DianeticsPslBuilder.PLACES['south-africa'];
+    const faqPairs = this.extractFaqPairs(opts.bodyHtml);
+
+    const placeEntity = {
+      '@type': 'Place',
+      '@id': `${this.config.baseUrl}/#place-${place.qid}`,
+      name: place.name,
+      sameAs: [`https://www.wikidata.org/wiki/${place.qid}`, place.wiki],
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: place.lat,
+        longitude: place.lng
+      },
+      address: {
+        '@type': 'PostalAddress',
+        addressCountry: 'ZA',
+        addressRegion: place.region,
+        addressLocality: place.name
+      },
+      containedInPlace: {
+        '@type': 'Country',
+        name: 'South Africa',
+        sameAs: [`https://www.wikidata.org/wiki/${sa.qid}`, sa.wiki]
+      }
+    };
+
+    const aboutTopics = DianeticsPslBuilder.TOPICS.map(t => ({
+      '@type': 'Thing',
+      name: t.name,
+      sameAs: [`https://www.wikidata.org/wiki/${t.qid}`, t.wiki]
+    }));
+
+    const org = {
+      '@type': 'Organization',
+      '@id': `${this.config.baseUrl}/#org`,
+      name: 'Self-Mastery Publications SA',
+      url: this.config.baseUrl,
+      description:
+        'South African commercial publisher/fulfillment node for the physical hardcover of Dianetics: The Modern Science of Mental Health. Express courier. Not a clinic or religious centre.',
+      areaServed: {
+        '@type': 'Country',
+        name: 'South Africa',
+        sameAs: [`https://www.wikidata.org/wiki/${sa.qid}`, sa.wiki]
+      },
+      address: {
+        '@type': 'PostalAddress',
+        addressCountry: 'ZA',
+        addressRegion: hub.regionName
+      }
+    };
+
+    const book = {
+      '@type': 'Book',
+      '@id': `${this.config.baseUrl}/#book`,
+      name: 'Dianetics: The Modern Science of Mental Health',
+      author: {
+        '@type': 'Person',
+        name: 'L. Ron Hubbard',
+        sameAs: [
+          'https://www.wikidata.org/wiki/Q216896',
+          'https://en.wikipedia.org/wiki/L._Ron_Hubbard'
+        ]
+      },
+      datePublished: '1950-05-09',
+      genre: 'Self-help',
+      inLanguage: 'en',
+      sameAs: [
+        'https://www.wikidata.org/wiki/Q5271634',
+        'https://en.wikipedia.org/wiki/Dianetics:_The_Modern_Science_of_Mental_Health'
+      ],
+      description:
+        'Classic self-improvement text first published in 1950. Commercial physical book sale only. Not medical, psychological or clinical advice.'
+    };
+
+    const webPage: Record<string, unknown> = {
+      '@type': 'WebPage',
+      '@id': `${canonical}#webpage`,
+      name: opts.title,
+      url: canonical,
+      description: opts.metaDesc,
+      inLanguage: 'en-ZA',
+      isPartOf: { '@type': 'WebSite', '@id': `${this.config.baseUrl}/#website`, url: this.config.baseUrl },
+      about: aboutTopics,
+      contentLocation: { '@id': `${this.config.baseUrl}/#place-${place.qid}` },
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['h1', 'article p:first-of-type', '.faq h3']
+      }
+    };
+
+    const breadcrumb = {
+      '@type': 'BreadcrumbList',
+      itemListElement: opts.isPillar
+        ? [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Home',
+              item: this.config.baseUrl
+            }
+          ]
+        : [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Home',
+              item: this.config.baseUrl
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: opts.h1,
+              item: canonical
+            }
+          ]
+    };
+
+    const graph: Record<string, unknown>[] = [
       {
         '@type': 'WebSite',
+        '@id': `${this.config.baseUrl}/#website`,
         name: 'Self-Mastery Publications SA',
         url: this.config.baseUrl,
-        description: 'Physical copies of the classic 1950 self-improvement book Dianetics: The Modern Science of Mental Health for South African executives. Express delivery. Not medical or clinical advice.'
+        inLanguage: 'en-ZA',
+        description:
+          'Physical copies of the classic 1950 self-improvement book Dianetics: The Modern Science of Mental Health for South African professionals. Express delivery. Not medical or clinical advice.',
+        publisher: { '@id': `${this.config.baseUrl}/#org` }
       },
-      {
-        '@type': 'WebPage',
-        name: opts.title,
-        url: canonical,
-        description: opts.metaDesc,
-        isPartOf: { '@type': 'WebSite', url: this.config.baseUrl }
-      },
-      {
-        '@type': 'Book',
-        name: 'Dianetics: The Modern Science of Mental Health',
-        author: {
-          '@type': 'Person',
-          name: 'L. Ron Hubbard',
-          sameAs: [
-            'https://www.wikidata.org/wiki/Q216896',
-            'https://en.wikipedia.org/wiki/L._Ron_Hubbard'
-          ]
-        },
-        datePublished: '1950-05-09',
-        genre: 'Self-help',
-        sameAs: [
-          'https://www.wikidata.org/wiki/Q5271634',
-          'https://en.wikipedia.org/wiki/Dianetics:_The_Modern_Science_of_Mental_Health'
-        ],
-        description: 'Classic self-improvement text first published in 1950. Commercial physical book sale only. Not medical, psychological or clinical advice.'
-      },
+      webPage,
+      breadcrumb,
+      placeEntity,
+      org,
+      book,
       {
         '@type': 'Offer',
         name: 'Dianetics Hardcover + Express Delivery SA',
@@ -306,14 +548,12 @@ ${opts.bodyHtml}
         priceCurrency: 'ZAR',
         availability: 'https://schema.org/InStock',
         url: canonical,
-        seller: {
-          '@type': 'Organization',
-          name: hub.accountHolder,
-          address: {
-            '@type': 'PostalAddress',
-            addressCountry: 'ZA',
-            addressRegion: hub.regionName
-          }
+        itemOffered: { '@id': `${this.config.baseUrl}/#book` },
+        seller: { '@id': `${this.config.baseUrl}/#org` },
+        areaServed: {
+          '@type': 'Country',
+          name: 'South Africa',
+          sameAs: [`https://www.wikidata.org/wiki/${sa.qid}`, sa.wiki]
         },
         shippingDetails: {
           '@type': 'OfferShippingDetails',
@@ -340,6 +580,21 @@ ${opts.bodyHtml}
         }
       }
     ];
+
+    if (faqPairs.length) {
+      graph.push({
+        '@type': 'FAQPage',
+        '@id': `${canonical}#faq`,
+        mainEntity: faqPairs.map(pair => ({
+          '@type': 'Question',
+          name: pair.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: pair.a
+          }
+        }))
+      });
+    }
 
     return JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
   }
