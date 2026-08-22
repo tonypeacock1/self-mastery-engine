@@ -1,0 +1,154 @@
+keyword,search_volume,competition,competition_level,cpc,keyword_difficulty,search_intent,se_results_count,categories
+sandton,49500,0.05,LOW,0.52,21,informational,,"[10108, 10756, 13600]"
+load shedding,12100,0.02,LOW,3.6,43,informational,,"[10018, 10160, 10829, 12114]"
+emotional intelligence,9900,0.1,LOW,0.94,43,informational,,"[10002, 10231, 13703]"
+imposter syndrome,6600,0.01,LOW,2,44,informational,,"[10002, 10231, 13703]"
+brain fog,3600,0.08,LOW,0.57,24,informational,,"[10011, 10085, 10474]"
+anhedonia,2900,0,LOW,,21,informational,,"[10011, 10085, 10488, 11751]"
+rumination,2400,0,LOW,,44,informational,133,"[10002, 10231, 13703]"
+burnout,1900,0.07,LOW,0.62,63,informational,,"[10011, 10085, 10488, 11748]"
+dissociation,1900,0,LOW,,38,informational,,"[10002, 10231, 13836]"
+fight or flight,1900,0,LOW,,41,informational,,"[10013, 10103, 10556]"
+stress management,1900,0.43,MEDIUM,1.1,70,informational,,"[10011, 10085, 10488, 11748]"
+anger management,1600,0.29,LOW,1.14,48,informational,,"[10002, 10231, 13703]"
+overthinking,1600,0.03,LOW,0.5,24,informational,,"[10002, 10231, 13703]"
+burnout symptoms,1300,0.16,LOW,1.39,49,informational,129,"[10011, 10085, 10488, 11748]"
+chronic stress,1300,0.02,LOW,30.77,60,informational,,"[10011, 10011, 10085, 10085, 10488, 10488, 11748]"
+how to manage stress,1000,0.52,MEDIUM,1.15,70,informational,,"[10011, 10085, 10488, 11748]"
+how to stop overthinking,1000,0.29,LOW,2.97,20,informational,,"[10002, 10231, 13703]"
+midlife crisis,880,0,LOW,,27,informational,,"[10002, 10028, 13709]"
+emotional regulation,720,0.14,LOW,1.58,51,informational,137,"[10002, 10011, 10085, 10231, 10488, 11748, 13703]"
+self sabotage,720,0,LOW,,9,informational,136,"[10002, 10231, 13703]"
+depersonalization,720,0,LOW,,28,informational,,"[10011, 10085, 10488, 11748]"
+self help books,720,1,HIGH,0.1,9,informational,,"[10002, 10231, 13703]"
+signs of burnout,590,0.13,LOW,0.15,44,informational,131,"[10011, 10085, 10488, 11748]"
+perfectionism,590,0,LOW,,25,informational,,"[10002, 10231, 13703]"
+work life balance,590,0.02,LOW,0.01,44,informational,,"[10004, 10276, 11084]"
+brain fog symptoms,590,0.01,LOW,0.6,28,informational,,
+brain fog treatment,590,1,HIGH,0.32,33,informational,,
+people pleasing,480,0.01,LOW,,7,informational,,"[10002, 10028, 10220]"
+short temper,480,0,LOW,,14,informational,,"[10011, 10085, 10488, 11748]"
+why am i so tired,480,0.08,LOW,,33,informational,,"[10013, 10103, 10556]"
+overthinking quotes,480,0.34,MEDIUM,0.07,0,informational,,
+emotional dysregulation,390,0.01,LOW,,9,informational,,"[10011, 10011, 10085, 10085, 10488, 10488, 11748]"
+nervous system regulation,390,0.29,LOW,0.95,19,informational,,"[10011, 10011, 10085, 10090, 10474]"
+overthinking meaning,390,0,LOW,,10,informational,,
+mental fatigue,320,0.04,LOW,0.72,34,informational,123,"[10011, 10085, 10488]"
+fear of failure,320,0,LOW,,15,informational,,"[10011, 10085, 10488, 11748]"
+compassion fatigue,260,0.01,LOW,,13,informational,134,"[10011, 10085, 10488, 11748]"
+how to recover from burnout,260,0.48,MEDIUM,0.65,30,informational,117,"[10011, 10085, 10488, 11748]"
+best self help books,260,1,HIGH,0.12,14,informational,,"[10002, 10231, 13703]"
+brain fog causes,260,0.03,LOW,,18,informational,,"[10011, 10085, 10474]"
+emotional detachment,260,0,LOW,,11,informational,,"[10011, 10085, 10458]"
+emotional numbness,210,0.01,LOW,,33,informational,47700000,"[10011, 10085, 10458]"
+trauma response,210,0,LOW,2.22,26,informational,,"[10011, 10085, 10458]"
+mental exhaustion,170,0.03,LOW,,16,informational,876000000,"[10011, 10085, 10488]"
+feeling empty,170,0.01,LOW,,12,informational,,"[10108, 10756, 13861]"
+window of tolerance,170,0.02,LOW,,16,informational,,[10008]
+work stress,170,0.03,LOW,2.91,37,informational,,"[10011, 10085, 10488, 11748]"
+overthinking symptoms,170,0.02,LOW,,24,informational,,
+imposter syndrome lyrics,170,0,LOW,,0,informational,,
+self mastery,140,0.35,MEDIUM,0.92,0,informational,128,"[10002, 10231, 13703]"
+personal development books,140,1,HIGH,0.12,3,informational,,"[10002, 10231, 13703]"
+how to clear brain fog instantly,140,0.95,HIGH,0.22,,informational,,
+emotional resilience,110,0.02,LOW,0.23,47,informational,213000000,"[10002, 10231, 13703]"
+running on empty,110,0.07,LOW,0.01,30,informational,945000000,[10008]
+how to control anger,110,0.17,LOW,,48,informational,,"[10002, 10231, 13703]"
+mental health johannesburg,110,0.68,HIGH,1.38,22,informational,,"[10011, 10085, 10449]"
+presenteeism,110,0,LOW,,31,informational,,"[10002, 10231, 13703]"
+burnout treatment,110,0.77,HIGH,1.6,59,informational,,
+emotional triggers,90,0.01,LOW,,,informational,,"[10011, 10011, 10011, 10085, 10085, 10085, 10458, 10488, 10488, 11748]"
+how to deal with burnout,90,0.34,MEDIUM,1.66,68,informational,39200000,"[10002, 10011, 10085, 10231, 10488, 11748, 13703]"
+workplace burnout,90,0.12,LOW,7.59,,informational,,"[10004, 10276, 11084, 12374]"
+is brain fog dangerous,90,0,LOW,,,informational,,
+brain fog treatment at home,90,0.86,HIGH,0.16,,informational,,
+cortisol stress,70,0.48,MEDIUM,0.29,84,informational,,"[10011, 10085, 10488, 11748]"
+life coaching south africa,70,0.66,MEDIUM,2.3,24,commercial,,"[10002, 10231, 13703]"
+purpose in life,70,0.15,LOW,0.05,17,informational,,"[10002, 10231, 13703]"
+teacher burnout,70,0,LOW,,12,informational,,"[10016, 10139, 10746, 13772]"
+what is self-sabotaging relationships,70,0,LOW,,,informational,,
+burnout vs depression,70,0.02,LOW,,48,informational,,
+anxiety at work,50,0.02,LOW,,63,informational,,"[10011, 10085, 10488, 11748]"
+imposter syndrome song,50,0,LOW,,,informational,,
+burnout car,50,0,LOW,,30,transactional,,
+fear of success,40,0,LOW,,48,informational,,"[10011, 10085, 10488, 11748]"
+why am i so angry,40,0.07,LOW,,65,informational,,"[10013, 10103, 10556]"
+overthinking book,40,1,HIGH,0.06,,informational,,
+burnout causes,40,0.05,LOW,,63,informational,,
+how to be more productive,30,0.29,LOW,0.46,63,informational,,"[10002, 10231, 13703]"
+emotional regulation synonym,30,0,LOW,,,informational,,
+is brain fog permanent,30,0.02,LOW,3.88,,informational,,
+what causes imposter syndrome,30,0.02,LOW,,66,informational,,
+executive coaching johannesburg,20,0.46,MEDIUM,5.09,,informational,,"[10004, 10276, 11084, 12370]"
+no motivation,20,0.01,LOW,,52,informational,,"[10002, 10231, 13703]"
+self-sabotage synonym,20,0,LOW,,,informational,,
+emotional regulation examples,20,0.02,LOW,,,informational,,
+overthinking effects on brain,20,0.01,LOW,,,informational,,
+imposter syndrome test,20,0.05,LOW,,13,informational,,
+imposter syndrome examples,20,0,LOW,,,informational,,
+imposter syndrome in relationships,20,0,LOW,,,informational,,
+burnout recovery stages,20,0.12,LOW,,,informational,,
+can't stop overthinking,10,,,,,informational,,"[10002, 10011, 10085, 10231, 10488, 11748, 13703]"
+high performer burnout,10,,,,,informational,,"[10004, 10276, 11084, 12374]"
+how to stop overreacting,10,,,,,informational,,"[10011, 10085, 10488, 11748]"
+job burnout,10,0.08,LOW,,,informational,,"[10011, 10085, 10488, 11748]"
+stress management south africa,10,,,,,commercial,,"[10011, 10085, 10488, 11748]"
+burnout help,10,0.71,HIGH,,,informational,,"[10011, 10085, 10488, 11748]"
+corporate burnout,10,0.1,LOW,,,informational,,"[10004, 10276, 11084, 12374]"
+employee burnout,10,0.03,LOW,,,informational,,"[10004, 10276, 11084, 12374]"
+executive coaching cape town,10,0.24,LOW,,,navigational,,"[10016, 10139, 10746, 12025]"
+job stress,10,0.04,LOW,,68,informational,,"[10011, 10085, 10488, 11748]"
+self sabotage psychology,10,0,LOW,,,informational,,"[10002, 10231, 13703]"
+wellness johannesburg,10,0.74,HIGH,,,navigational,,"[10017, 10150]"
+why do i procrastinate,10,0.07,LOW,,,informational,,"[10002, 10231, 13703]"
+how to deal with self sabotage,10,,,,,informational,,
+self-sabotage pdf,10,0,LOW,,,informational,,
+signs of self sabotage,10,0,LOW,,,informational,,
+self-sabotage quiz,10,0,LOW,,,informational,,
+self-sabotage person,10,0,LOW,,,informational,,
+emotional regulation pdf,10,0.1,LOW,,,informational,,
+emotional regulation in psychology,10,0.32,LOW,,,informational,,
+emotional regulation worksheets,10,0.04,LOW,,,informational,,
+what are the 5 emotion regulation strategies,10,0.82,HIGH,,,informational,,
+emotional regulation course,10,0.86,HIGH,,,informational,,
+how long does emotional numbness last,10,0,LOW,,,informational,,
+can emotional numbness be permanent,10,0,LOW,,,informational,,
+emotional numbness adhd,10,0.71,HIGH,,,informational,,
+emotional numbness quotes,10,0,LOW,,,informational,,
+overthinking effects,10,0,LOW,,53,informational,,
+is brain fog curable,10,0,LOW,,,informational,,
+brain fog reddit,10,0.05,LOW,,59,informational,,
+imposter syndrome reddit,10,0,LOW,,,informational,,
+burnout meaning person,10,0,LOW,,,informational,,
+burnout symptoms reddit,10,0,LOW,,,informational,,
+burnout recovery time,10,0.53,MEDIUM,0.04,,informational,,
+how to help someone with burnout,10,0.14,LOW,,,informational,,
+habitual burnout,10,0,LOW,,,informational,,
+burnout recovery timeline,10,0.53,MEDIUM,0.04,,informational,,
+burnout recovery plan pdf,10,0.22,LOW,,,informational,,
+recover from burnout in 30 days,10,0.5,MEDIUM,,,informational,,
+how to recover from burnout nhs,10,,,,,informational,,
+burnout recovery reddit,10,0,LOW,,,informational,,
+how to recover from burnout without quitting your job,10,0.29,LOW,,,informational,,
+burnout recovery,,,,,23,informational,,"[10011, 10085, 10488, 11748]"
+dianetics,,,,,,informational,,"[10002, 10231, 13836]"
+why am i so irritable,,,,,,informational,,"[10011, 10085, 10488, 11748]"
+adrenal fatigue,,,,,54,informational,,"[10011, 10085, 13745]"
+burnout recovery plan,,,,,,informational,,"[10004, 10276, 11084]"
+chronic fatigue,,,,,64,informational,,"[10011, 10085, 10486, 11745]"
+feeling numb,,,,,41,informational,,"[10011, 10085, 10488, 11751]"
+l ron hubbard,,,,,,informational,,"[10011, 10091, 10513]"
+recover from burnout,,,,,23,informational,,"[10011, 10085, 10488, 11748]"
+emotional regulation in adults,,,,,,informational,,
+emotional numbness test,,,,,46,informational,,
+emotional numbness symptoms,,,,,,informational,,
+how to cure emotional numbness,,,,,,informational,,
+overthinking disorder,,,,,39,informational,,
+imposter syndrome symptoms,,,,,,informational,,
+burnout symptoms test,,,,,41,informational,,
+burnout physical symptoms,,,,,50,informational,,
+mental burnout symptoms,,,,,,informational,,
+burnout symptoms and treatment,,,,,,informational,,
+burnout syndrome,,,,,91,informational,,
+3-5 years to recover from burnout,,,,,,informational,,
+recovery from severe burnout,,,,,,informational,,
