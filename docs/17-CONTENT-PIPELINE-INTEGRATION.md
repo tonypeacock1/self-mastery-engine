@@ -103,8 +103,29 @@ const briefs = getWave1Briefs();
 
 ---
 
+## Wave 1 content status
+
+| briefId | body module export | Voice gate |
+|---------|-------------------|------------|
+| self-mastery-sa-pillar | `SELF_MASTERY_PILLAR_BODY` | pass |
+| executive-burnout-recovery-sa | `EXECUTIVE_BURNOUT_PILLAR_BODY` | pass |
+| executive-burnout-johannesburg | `EXECUTIVE_BURNOUT_JHB_BODY` | pass |
+| cant-switch-off | `CANT_SWITCH_OFF_BODY` | pass |
+| short-temper-reactivity | `STOP_SNAPPING_BODY` | pass |
+| successful-but-empty | `SUCCESSFUL_BUT_EMPTY_BODY` | pass |
+
+Source: `src/modules/dianetics/wave1_content.ts` (`voiceContract: sa_content_voice_v1`)
+
+```bash
+npx tsx scripts/build-wave1-site.ts
+# → dist-wave1/ (pillar + Johannesburg spoke + content-manifest.json)
+```
+
+---
+
 ## Next engineering steps (optional)
 
 - Control-panel button: select Wave 1 brief → show messages → accept bodyHtml → write to dist
 - CI job: fail build if `voiceContract !== 'sa_content_voice_v1'` on production content manifest
-- Replace `example_content.ts` bodies with first voice-generated set after human review
+- Expand `build-wave1-site.ts` to all six bodies as separate Pages projects per docs/15
+- Human editorial pass on Wave 1 HTML before first production deploy
