@@ -10,3 +10,12 @@ node_modules/
 dist/
 dist-example/
 .wrangler/
+assets/product-masters/cover.png
+dist-jhb-exec-resilience/
+dist-cape-town-self-mastery/
+dist-*/
+
+# Generated per-site dists (rebuild with build:site)
+dist-*/
+!dist-wave1/
+!dist-wave1/**
