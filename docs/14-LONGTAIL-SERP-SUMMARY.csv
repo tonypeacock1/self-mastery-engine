@@ -1,36 +1,52 @@
 keyword,is_longtail,opportunity,n_strong,n_weak,n_local,n_organic,has_ai
 short temper,False,HIGH — weak/dead SERP opportunity,2,6,0,8,True
+Pretoria high performer stress,True,HIGH — local/long-tail thin SERP,0,4,3,9,True
 composure for professionals South Africa,True,HIGH — local/long-tail thin SERP,1,4,0,9,True
 why do I get in my own way Gauteng,True,HIGH — local/long-tail thin SERP,1,4,1,9,True
+why do successful people feel empty,True,HIGH — weak/dead SERP opportunity,2,4,0,8,True
 exhaustion for professionals South Africa,True,HIGH — local/long-tail thin SERP,0,3,5,9,True
 high performer stress Pretoria,True,HIGH — local/long-tail thin SERP,0,3,3,9,True
+Gauteng professional trapped stress,True,HIGH — local/long-tail thin SERP,1,3,4,9,True
 Sandton high performer stress,True,HIGH — local/long-tail thin SERP,1,3,4,9,True
 high achiever emptiness,False,HIGH — weak/dead SERP opportunity,1,3,0,8,True
 how to stop snapping,False,HIGH — weak/dead SERP opportunity,1,3,0,8,True
 self mastery,False,HIGH — weak/dead SERP opportunity,1,3,0,7,True
+why do I overreact to everything,True,HIGH — weak/dead SERP opportunity,1,3,0,9,True
 how to feel alive again after stress,True,HIGH — weak/dead SERP opportunity,2,3,0,7,True
+how to under stress clarity,True,HIGH — weak/dead SERP opportunity,2,3,0,8,True
 successful but empty,False,HIGH — weak/dead SERP opportunity,2,3,0,7,True
+why do I feel empty after winning,True,HIGH — weak/dead SERP opportunity,2,3,0,9,True
+Randburg high performer stress,True,HIGH — local/long-tail thin SERP,0,2,4,9,True
 people pleasing exhaustion,False,HIGH — weak/dead SERP opportunity,0,2,0,8,True
+work stress Johannesburg cost of living,True,HIGH — local/long-tail thin SERP,0,2,1,8,True
 high performer stress Sandton,True,HIGH — local/long-tail thin SERP,1,2,3,9,True
 how to handle load shedding stress,True,HIGH — local/long-tail thin SERP,1,2,6,9,True
 how to regain composure,False,HIGH — weak/dead SERP opportunity,1,2,0,8,True
 how to stop snapping Durban,True,HIGH — local/long-tail thin SERP,1,2,0,8,True
 how to stop snapping at people,True,HIGH — weak/dead SERP opportunity,1,2,0,7,True
+how to understand overreacting,True,HIGH — weak/dead SERP opportunity,1,2,0,8,True
+middle class pressure South Africa and burnout,True,HIGH — local/long-tail thin SERP,1,2,5,8,True
+middle class pressure South Africa can't switch off,True,HIGH — local/long-tail thin SERP,1,2,3,8,True
 successful but unfulfilled,False,HIGH — weak/dead SERP opportunity,1,2,0,8,True
+why am I so reactive lately,True,HIGH — weak/dead SERP opportunity,1,2,0,7,True
 why do I overreact,False,HIGH — weak/dead SERP opportunity,1,2,0,9,True
+work stress financial pressure South Africa,True,HIGH — local/long-tail thin SERP,1,2,3,9,True
 can't switch off from work,True,HIGH — weak/dead SERP opportunity,2,2,0,8,True
 feeling empty inside,False,HIGH — weak/dead SERP opportunity,2,2,0,9,True
 financial stress South Africa,False,HIGH — local/long-tail thin SERP,2,2,4,8,True
 high functioning burnout,False,HIGH — weak/dead SERP opportunity,2,2,0,8,True
 how to keep under pressure composure,True,HIGH — weak/dead SERP opportunity,2,2,0,8,True
+how to stop overreacting,True,HIGH — weak/dead SERP opportunity,2,2,0,8,True
 how to stop overreacting to small things,True,HIGH — weak/dead SERP opportunity,2,2,0,8,True
 leadership burnout,False,HIGH — weak/dead SERP opportunity,2,2,0,8,True
 manager burnout,False,HIGH — weak/dead SERP opportunity,2,2,0,8,True
 presenteeism,False,HIGH — weak/dead SERP opportunity,2,2,0,9,True
 regain composure under pressure,False,HIGH — weak/dead SERP opportunity,2,2,0,7,True
+why am I more reactive when tired,True,HIGH — weak/dead SERP opportunity,2,2,0,9,True
 burned out but can't quit,True,HIGH — local/long-tail thin SERP,3,2,0,7,True
 how to recover from burnout without quitting your job,True,HIGH — local/long-tail thin SERP,3,2,0,7,True
 self sabotage for professionals South Africa,True,HIGH — local/long-tail thin SERP,3,2,3,9,True
+Gqeberha high performer stress,True,HIGH — local/long-tail thin SERP,0,1,3,9,True
 executive burnout,False,HIGH — weak SERP (few authorities),0,1,0,9,True
 high performer stress Cape Town,True,HIGH — local/long-tail thin SERP,0,1,6,8,True
 high performer stress Randburg,True,HIGH — local/long-tail thin SERP,0,1,6,8,True
@@ -44,6 +60,7 @@ best self help books,False,HIGH — weak SERP (few authorities),1,1,1,8,True
 burnout Cape Town,False,HIGH — local/long-tail thin SERP,1,1,4,9,True
 executive stress,False,HIGH — weak SERP (few authorities),1,1,0,9,False
 high performer stress Johannesburg,True,HIGH — local/long-tail thin SERP,1,1,3,9,True
+irritability Johannesburg professionals,True,HIGH — local/long-tail thin SERP,1,1,5,9,True
 load shedding stress,False,HIGH — local/long-tail thin SERP,1,1,4,9,True
 mental fatigue Sandton executives,True,HIGH — local/long-tail thin SERP,1,1,5,9,True
 overreacting for professionals South Africa,True,HIGH — local/long-tail thin SERP,1,1,7,9,True
@@ -52,16 +69,27 @@ self sabotage,False,HIGH — weak SERP (few authorities),1,1,1,7,True
 stop being so reactive,False,HIGH — weak SERP (few authorities),1,1,0,6,True
 stop overreacting,False,HIGH — weak SERP (few authorities),1,1,2,9,False
 survival stress South Africa professionals,True,HIGH — local/long-tail thin SERP,1,1,5,9,True
+Durban high performer stress,True,HIGH — local/long-tail thin SERP,2,1,3,8,True
 how to break through emotional numbness,True,HIGH — weak SERP (few authorities),2,1,0,8,True
 how to handle middle class pressure South Africa,True,HIGH — local/long-tail thin SERP,2,1,3,8,True
 how to recover from emotional numbness,True,HIGH — weak SERP (few authorities),2,1,0,9,True
 how to stop absorbing other people's stress,True,HIGH — weak SERP (few authorities),2,1,0,8,True
+past stress still affecting me South Africa,True,HIGH — local/long-tail thin SERP,2,1,4,9,True
 self sabotage Johannesburg professionals,True,HIGH — local/long-tail thin SERP,2,1,4,9,True
 teacher burnout,False,HIGH — weak SERP (few authorities),2,1,0,8,True
 why am I so tired,True,HIGH — weak SERP (few authorities),2,1,1,9,True
+why do I overreact when stressed,True,HIGH — weak SERP (few authorities),2,1,0,9,True
+why emotional numbness won't go away,True,HIGH — weak SERP (few authorities),2,1,0,8,True
 work life balance,False,HIGH — weak SERP (few authorities),2,1,2,9,True
 emotional numbness for professionals South Africa,True,HIGH — local/long-tail thin SERP,3,1,1,8,True
 how to cope with burnout when you can't quit,True,HIGH — local/long-tail thin SERP,4,1,0,7,True
+Cape Town executive burnout recovery,True,HIGH — local/long-tail thin SERP,0,0,3,9,True
+Durban executive burnout recovery,True,HIGH — local/long-tail thin SERP,0,0,2,9,True
+Gqeberha executive burnout recovery,True,HIGH — local/long-tail thin SERP,0,0,4,9,True
+Johannesburg executive burnout recovery,True,HIGH — local/long-tail thin SERP,0,0,5,9,True
+Pretoria executive burnout recovery,True,HIGH — local/long-tail thin SERP,0,0,5,9,True
+Randburg executive burnout recovery,True,HIGH — local/long-tail thin SERP,0,0,3,9,True
+Sandton executive burnout recovery,True,HIGH — local/long-tail thin SERP,0,0,3,9,True
 burnout Johannesburg,False,HIGH — local/long-tail thin SERP,0,0,6,9,True
 burnout recovery Cape Town professionals,True,HIGH — local/long-tail thin SERP,0,0,6,9,True
 burnout recovery South Africa,False,HIGH — local/long-tail thin SERP,0,0,5,9,True
@@ -76,21 +104,32 @@ executive burnout recovery Pretoria,True,HIGH — local/long-tail thin SERP,0,0,
 executive burnout recovery Randburg,True,HIGH — local/long-tail thin SERP,0,0,5,10,False
 executive burnout recovery Sandton,True,HIGH — local/long-tail thin SERP,0,0,4,10,False
 life coaching South Africa,False,HIGH — local/long-tail thin SERP,0,0,6,9,False
+Gauteng high performer stress,True,HIGH — local/long-tail thin SERP,1,0,5,8,True
 burnout Durban,False,HIGH — local/long-tail thin SERP,1,0,6,9,True
 executive burnout Cape Town,True,HIGH — local/long-tail thin SERP,2,0,3,9,True
 how to recover from burnout that sleep doesn't fix,True,HIGH — weak SERP (few authorities),2,0,0,8,True
+how to stored stress reactions,True,HIGH — weak SERP (few authorities),2,0,0,8,True
 overthinking for professionals South Africa,True,HIGH — local/long-tail thin SERP,2,0,4,8,True
+professional burnout Gqeberha,True,HIGH — local/long-tail thin SERP,2,0,6,9,True
+professional burnout Sandton,True,HIGH — local/long-tail thin SERP,2,0,6,9,True
+providing for family stress Cape Town,True,HIGH — local/long-tail thin SERP,2,0,5,9,True
+why am I exhausted when my life looks fine,True,HIGH — weak SERP (few authorities),2,0,0,8,True
+why does rest not fix my exhaustion,True,HIGH — weak SERP (few authorities),2,0,0,7,True
 running on empty,False,MEDIUM — beatable with strong content,3,4,0,9,False
+why do I sabotage my own success,True,MEDIUM — beatable with strong content,4,4,0,8,True
 fear of success,False,MEDIUM — beatable with strong content,4,3,0,9,True
 Dianetics book,False,MEDIUM — beatable with strong content,3,2,3,9,False
 emotional flatness,False,MEDIUM — beatable with strong content,3,2,0,8,True
 people pleasing,False,MEDIUM — beatable with strong content,3,2,0,7,True
+why can't I recover from burnout,True,MEDIUM — beatable with strong content,3,2,0,7,True
+why do I feel emotionally numb,True,MEDIUM — beatable with strong content,3,2,0,9,True
 blocked potential,False,MEDIUM — beatable with strong content,4,2,1,9,True
 emotional detachment,False,MEDIUM — beatable with strong content,4,2,0,8,True
 fear of failure,False,MEDIUM — beatable with strong content,4,2,1,8,True
 how to break patterns of self sabotage,True,MEDIUM — beatable with strong content,4,2,0,8,True
 how to handle traffic and work stress,True,MEDIUM — beatable with strong content,4,2,1,9,True
 purpose in life,False,MEDIUM — beatable with strong content,4,2,1,8,True
+how to stop self sabotage,True,MEDIUM,5,2,0,10,False
 perfectionism,False,MEDIUM,5,2,0,9,True
 feeling empty,False,MEDIUM — beatable with strong content,3,1,0,9,True
 how to break the cycle of overthinking,True,MEDIUM — beatable with strong content,3,1,1,8,True
@@ -100,19 +139,28 @@ emotional burnout from helping,False,MEDIUM — beatable with strong content,4,1
 emotional numbness,False,MEDIUM — beatable with strong content,4,1,0,8,True
 employee burnout,False,MEDIUM — beatable with strong content,4,1,0,9,True
 how to feel again after chronic stress,True,MEDIUM — beatable with strong content,4,1,0,8,True
+how to work exhaustion,True,MEDIUM — beatable with strong content,4,1,1,8,True
 midlife crisis,False,MEDIUM — beatable with strong content,4,1,0,8,True
 nervous system regulation,False,MEDIUM — beatable with strong content,4,1,0,8,True
 rumination,False,MEDIUM — beatable with strong content,4,1,0,7,True
+why am I exhausted by people,True,MEDIUM — beatable with strong content,4,1,0,8,True
+why do I feel numb after stress,True,MEDIUM — beatable with strong content,4,1,0,8,True
 can't stop overthinking,False,MEDIUM,5,1,0,7,True
 emotional resilience,False,MEDIUM,5,1,1,8,True
 how to deal with burnout,True,MEDIUM,5,1,1,8,False
 imposter syndrome,False,MEDIUM,5,1,0,7,True
+why am I so irritable all the time,True,MEDIUM,5,1,0,9,True
+why can't I move on from past stress,True,MEDIUM,5,1,0,7,True
+why stress reactions won't go away,True,MEDIUM,5,1,0,9,True
 work exhaustion,False,MEDIUM,5,1,1,9,True
 compassion fatigue recovery,False,MEDIUM — beatable with strong content,3,0,0,9,True
 how to get energy back after burnout,True,MEDIUM — beatable with strong content,3,0,0,9,True
 how to handle crime related stress,True,MEDIUM — beatable with strong content,3,0,1,9,True
 how to handle providing for family stress,True,MEDIUM — beatable with strong content,3,0,0,9,True
+how to understand self sabotage,True,MEDIUM — beatable with strong content,3,0,1,8,True
 signs of burnout,False,MEDIUM — beatable with strong content,3,0,1,8,True
+why am I still exhausted after sleeping,True,MEDIUM — beatable with strong content,3,0,0,7,True
+why do I lose control under stress,True,MEDIUM — beatable with strong content,3,0,1,8,True
 burnout causes,False,MEDIUM — beatable with strong content,4,0,0,8,True
 burnout symptoms,False,MEDIUM — beatable with strong content,4,0,1,8,True
 burnout treatment,False,MEDIUM — beatable with strong content,4,0,2,8,True
@@ -122,6 +170,7 @@ emotional triggers,False,MEDIUM — beatable with strong content,4,0,0,7,True
 how to handle job insecurity stress,True,MEDIUM — beatable with strong content,4,0,1,8,True
 how to recover from burnout,True,MEDIUM — beatable with strong content,4,0,0,7,True
 how to spot signs of burnout,True,MEDIUM — beatable with strong content,4,0,1,8,True
+how to understand emotional numbness,True,MEDIUM — beatable with strong content,4,0,0,8,True
 mental fatigue,False,MEDIUM — beatable with strong content,4,0,2,9,True
 why am I so irritable,True,MEDIUM — beatable with strong content,4,0,0,8,True
 work stress,False,MEDIUM — beatable with strong content,4,0,0,8,True
@@ -142,3 +191,4 @@ how to manage stress,False,HARD — authority-heavy SERP,6,0,0,8,True
 overthinking,False,HARD — authority-heavy SERP,6,0,0,7,True
 stress management,False,HARD — authority-heavy SERP,6,0,0,9,True
 workplace burnout,False,HARD — authority-heavy SERP,6,0,0,9,True
+how to unwanted stress reactions,True,HARD — authority-heavy SERP,7,0,0,9,True
