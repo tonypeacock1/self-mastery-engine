@@ -125,7 +125,7 @@ export class DianeticsPslBuilder {
 <meta property="og:image" content="${this.config.baseUrl}/images/og-book.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Dianetics: The Modern Science of Mental Health hardcover">
+<meta property="og:image:alt" content="Dianetics: The Modern Science of Mental Health softcover">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${this.escape(opts.title)}">
 <meta name="twitter:description" content="${this.escape(opts.metaDesc)}">
@@ -141,7 +141,7 @@ nav a{color:var(--accent);text-decoration:none;margin-right:0.5rem}
 .disclaimer{background:#f7f7f7;border-left:4px solid #666;padding:0.85rem 1rem;margin:1.5rem 0;font-size:0.9rem}
 .eft-widget{border:1px solid var(--border);padding:1.25rem;margin:2rem 0;border-radius:6px;background:#fafafa}
 .product-shot{display:flex;gap:1rem;align-items:flex-start;margin:1rem 0 1.25rem;flex-wrap:wrap}
-.product-shot img{width:140px;height:auto;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,.12);background:#111}
+.product-shot img{width:160px;height:auto;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,.12);background:#f5f5f5;object-fit:contain}
 .product-caption{flex:1;min-width:180px;font-size:0.92rem;color:var(--muted);margin:0}
 .eft-widget label{display:block;margin:0.6rem 0 0.2rem;font-weight:600;font-size:0.9rem}
 .eft-widget input{width:100%;padding:0.55rem 0.65rem;border:1px solid #ccc;border-radius:4px;font-size:1rem;box-sizing:border-box}
@@ -161,19 +161,23 @@ ${jsonLd}
 ${opts.bodyHtml}
 
 <div class="disclaimer" role="note">
-<strong>Important disclaimer:</strong> This page sells the physical self-improvement book <em>Dianetics: The Modern Science of Mental Health</em> (first published 1950). It is commercial literature for personal development only. It is not medical advice, clinical therapy, psychological counselling, or any form of treatment. Consult a qualified professional for health-related concerns.
+<strong>Important disclaimer:</strong> This page sells the physical softcover self-improvement book <em>Dianetics: The Modern Science of Mental Health</em> (first published 1950). It is commercial literature for personal development only. It is not medical advice, clinical therapy, psychological counselling, or any form of treatment. Consult a qualified professional for health-related concerns.
 </div>
 
 <section class="eft-widget" id="order" aria-labelledby="order-h">
-<h2 id="order-h">Order the Physical Hardcover – R400 Total</h2>
+<h2 id="order-h">Order the Physical Softcover – R400 Total</h2>
 <div class="product-shot">
-<picture>
-<source type="image/webp" srcset="/images/dianetics-hardcover.webp">
-<img src="/images/dianetics-hardcover.jpg" width="280" height="448" alt="Dianetics: The Modern Science of Mental Health — hardcover book cover" loading="lazy" decoding="async">
-</picture>
-<p class="product-caption"><strong>Dianetics: The Modern Science of Mental Health</strong> by L. Ron Hubbard (hardcover). Publisher materials state more than 20 million copies sold worldwide and translations into 50 languages. First published 1950.</p>
+<img
+  src="${this.config.baseUrl}/images/dianetics-softcover.jpg"
+  width="200"
+  height="320"
+  alt="Dianetics: The Modern Science of Mental Health — softcover book"
+  decoding="async"
+  fetchpriority="high"
+  style="display:block;width:160px;height:auto;max-width:40%;background:#f0f0f0;border:1px solid #ddd">
+<p class="product-caption"><strong>Dianetics: The Modern Science of Mental Health</strong> by L. Ron Hubbard (softcover). Publisher materials state more than 20 million copies sold worldwide and translations into 50 languages. First published 1950. Total R400 including express courier in major SA metros.</p>
 </div>
-<p>Book + 24-hour express courier anywhere in major South African metros. Instant EFT. Bank details resolve to your nearest regional fulfillment hub.</p>
+<p>Softcover book + express courier anywhere in major South African metros. Instant EFT. Bank details resolve to your nearest regional fulfillment hub.</p>
 
 <form id="eft-form" novalidate>
 <label for="fullName">Full Name</label>
@@ -461,7 +465,7 @@ ${opts.bodyHtml}
       name: 'Self-Mastery Publications SA',
       url: this.config.baseUrl,
       description:
-        'South African commercial publisher/fulfillment node for the physical hardcover of Dianetics: The Modern Science of Mental Health. Express courier. Not a clinic or religious centre.',
+        'South African commercial publisher/fulfillment node for the physical softcover of Dianetics: The Modern Science of Mental Health. Express courier. Not a clinic or religious centre.',
       areaServed: {
         '@type': 'Country',
         name: 'South Africa',
@@ -495,16 +499,16 @@ ${opts.bodyHtml}
       ],
       description:
         'Classic self-improvement text first published in 1950. Commercial physical book sale only. Not medical, psychological or clinical advice.',
-      image: `${this.config.baseUrl}/images/dianetics-hardcover.jpg`
+      image: `${this.config.baseUrl}/images/dianetics-softcover.jpg`
     };
 
     const imageObject = {
       '@type': 'ImageObject',
-      '@id': `${this.config.baseUrl}/images/dianetics-hardcover.jpg`,
-      url: `${this.config.baseUrl}/images/dianetics-hardcover.jpg`,
-      contentUrl: `${this.config.baseUrl}/images/dianetics-hardcover.jpg`,
-      caption: 'Dianetics: The Modern Science of Mental Health hardcover',
-      name: 'Dianetics hardcover product image',
+      '@id': `${this.config.baseUrl}/images/dianetics-softcover.jpg`,
+      url: `${this.config.baseUrl}/images/dianetics-softcover.jpg`,
+      contentUrl: `${this.config.baseUrl}/images/dianetics-softcover.jpg`,
+      caption: 'Dianetics: The Modern Science of Mental Health softcover',
+      name: 'Dianetics softcover product image',
       width: '800',
       height: '1280',
       encodingFormat: 'image/jpeg',
@@ -573,7 +577,7 @@ ${opts.bodyHtml}
       imageObject,
       {
         '@type': 'Offer',
-        name: 'Dianetics Hardcover + Express Delivery SA',
+        name: 'Dianetics Softcover + Express Delivery SA',
         price: '400.00',
         priceCurrency: 'ZAR',
         availability: 'https://schema.org/InStock',
@@ -686,7 +690,7 @@ ${urls.join('\n')}
 > Written for able South African professionals under real load.
 
 ## Primary Offer
-- Product: Dianetics: The Modern Science of Mental Health (hardcover)
+- Product: Dianetics: The Modern Science of Mental Health (softcover)
 - Price: R400 ZAR (book + 24-hour express delivery)
 - Payment: Instant EFT resolved to regional SA bank hubs
 - Fulfillment SLA: 24-hour dispatch target after payment confirmation
