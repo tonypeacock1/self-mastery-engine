@@ -1,8 +1,13 @@
 /**
- * Production-ready bodyHtml blocks for Dianetics Engine PSL sites.
- * Strict non-medical, non-YMYL framing. Executive performance + literary self-improvement only.
- * Differentiated local angles to reduce cross-site similarity fingerprint.
- * Soft CTA that lands the reader inside the Instant EFT widget.
+ * EXAMPLE / FALLBACK bodyHtml blocks for Dianetics Engine PSL sites.
+ *
+ * Status: pre–voice-pipeline commercial copy used by scripts/build-example-site.ts.
+ * Production path: generate bodyHtml via content_agent.ts under
+ * SA_CONTENT_RUNTIME_SYSTEM_PROMPT (docs/16, docs/17). Do not treat these
+ * strings as the long-term voice standard — replace per-page with
+ * voice-contract LLM output when running real Wave 1 builds.
+ *
+ * Constraints still observed here: non-medical, non-YMYL, soft Instant EFT CTA.
  */
 
 export const PILLAR_BODY = `

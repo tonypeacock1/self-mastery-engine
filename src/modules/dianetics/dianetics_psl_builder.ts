@@ -437,30 +437,42 @@ This property exists solely to sell physical copies of a 1950 self-help book and
 }
 
 /**
- * Example usage (to be called from build script or CI):
+ * Content path (required):
  *
- * const builder = new DianeticsPslBuilder({
- *   siteSlug: 'exec-resilience-sa',
- *   baseUrl: 'https://exec-resilience-sa.pages.dev',
- *   platform: 'cloudflare-pages',
- *   pillarTitle: 'Executive Burnout Recovery | Dianetics Book for High Performers SA',
- *   pillarH1: 'Master Workplace Stress and Reclaim Executive Clarity',
- *   pillarMetaDesc: 'Physical copies of the classic 1950 self-improvement book for South African executives. Express delivery R400. Not medical advice.',
- *   pillarBodyHtml: `... LLM content ...`,
- *   spokes: [
- *     {
- *       filename: 'johannesburg.html',
- *       cityKey: 'Johannesburg',
- *       title: 'Johannesburg Executive Burnout Recovery | Order Dianetics Book SA',
- *       h1: 'Johannesburg Executives: Recover Clarity from Workplace Burnout',
- *       metaDesc: '...',
- *       bodyHtml: `...`,
- *       hubId: 'gauteng_central'
- *     },
- *     // ... cape-town, durban, port-elizabeth
- *   ]
+ *   1. buildPageBrief() / getWave1Briefs()     → structured brief from research
+ *   2. buildContentMessages({ brief })        → system = SA_CONTENT_RUNTIME_SYSTEM_PROMPT
+ *   3. LLM generates bodyHtml under voice contract
+ *   4. validateBodyHtmlAgainstVoice(bodyHtml) → checklist gate
+ *   5. packageForPsl(brief, bodyHtml)         → title/h1/meta/body for this builder
+ *   6. new DianeticsPslBuilder({...}).build() → static files
+ *
+ * Modules: sa_content_voice.ts, page_brief.ts, content_agent.ts
+ * Spec:    docs/16-SA-CONTENT-VOICE-SYSTEM-PROMPT.md
+ * Wire:    docs/17-CONTENT-PIPELINE-INTEGRATION.md
+ *
+ * Example:
+ *
+ * import { messagesFromBriefInput, packageForPsl, validateBodyHtmlAgainstVoice } from './content_agent';
+ * const { brief, messages } = messagesFromBriefInput({
+ *   briefId: 'executive-burnout-johannesburg',
+ *   primaryKeyword: 'executive burnout recovery Johannesburg',
+ *   cluster: 'burnout_exhaustion',
+ *   geo: 'Johannesburg',
+ *   serpOpportunity: 'HIGH',
+ *   hubId: 'gauteng_central'
  * });
- *
- * const files = builder.build();
- * // Write files to dist/ or push to platform
+ * // const bodyHtml = await callLlm(messages);
+ * // const fails = validateBodyHtmlAgainstVoice(bodyHtml);
+ * // const packaged = packageForPsl(brief, bodyHtml);
+ * // const builder = new DianeticsPslBuilder({
+ * //   siteSlug: 'exec-resilience-sa',
+ * //   baseUrl: 'https://exec-resilience-sa.pages.dev',
+ * //   platform: 'cloudflare-pages',
+ * //   pillarTitle: packaged.title,
+ * //   pillarH1: packaged.h1,
+ * //   pillarMetaDesc: packaged.metaDesc,
+ * //   pillarBodyHtml: packaged.bodyHtml,
+ * //   spokes: [...]
+ * // });
+ * // const files = builder.build();
  */
