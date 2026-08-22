@@ -55,14 +55,15 @@ export class DianeticsPslBuilder {
       hubId: 'gauteng_central'
     });
 
-    // Spokes
+    // Spokes (canonical paths strip .html for Cloudflare Pages pretty URLs)
     for (const spoke of this.config.spokes) {
+      const canonPath = this.prettyPath(spoke.filename);
       files[spoke.filename] = this.renderPage({
         title: spoke.title,
         h1: spoke.h1,
         metaDesc: spoke.metaDesc,
         bodyHtml: spoke.bodyHtml,
-        canonicalPath: `/${spoke.filename}`,
+        canonicalPath: canonPath,
         isPillar: false,
         hubId: spoke.hubId
       });
