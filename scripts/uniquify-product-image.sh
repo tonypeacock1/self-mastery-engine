@@ -87,6 +87,11 @@ convert "$OUT/dianetics-hardcover.jpg" \
   -strip -quality 85 \
   "$OUT/og-book.jpg"
 
+# Aliases used by live HTML (softcover product framing)
+cp -f "$OUT/dianetics-hardcover.jpg" "$OUT/dianetics-softcover.jpg"
+cp -f "$OUT/dianetics-hardcover.webp" "$OUT/dianetics-softcover.webp"
+cp -f "$OUT/dianetics-hardcover-angle.jpg" "$OUT/dianetics-softcover-angle.jpg"
+
 echo "[uniquify] fingerprints:"
 identify "$OUT/dianetics-hardcover.jpg" "$OUT/dianetics-hardcover-angle.jpg" "$OUT/og-book.jpg"
 cksum "$OUT/dianetics-hardcover.jpg" "$OUT/dianetics-hardcover.webp" "$OUT/dianetics-hardcover-angle.jpg" "$OUT/og-book.jpg"
