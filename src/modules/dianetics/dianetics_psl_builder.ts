@@ -122,9 +122,14 @@ export class DianeticsPslBuilder {
 <meta property="og:title" content="${this.escape(opts.title)}">
 <meta property="og:description" content="${this.escape(opts.metaDesc)}">
 <meta property="og:url" content="${canonical}">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="${this.config.baseUrl}/images/og-book.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Dianetics: The Modern Science of Mental Health hardcover">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${this.escape(opts.title)}">
 <meta name="twitter:description" content="${this.escape(opts.metaDesc)}">
+<meta name="twitter:image" content="${this.config.baseUrl}/images/og-book.jpg">
 <style>
 /* Critical CSS only – zero external dependencies, zero footprint */
 :root{--text:#1a1a1a;--muted:#555;--border:#ddd;--accent:#0a5}
@@ -135,6 +140,9 @@ nav{font-size:0.95rem;margin-bottom:1.5rem}
 nav a{color:var(--accent);text-decoration:none;margin-right:0.5rem}
 .disclaimer{background:#f7f7f7;border-left:4px solid #666;padding:0.85rem 1rem;margin:1.5rem 0;font-size:0.9rem}
 .eft-widget{border:1px solid var(--border);padding:1.25rem;margin:2rem 0;border-radius:6px;background:#fafafa}
+.product-shot{display:flex;gap:1rem;align-items:flex-start;margin:1rem 0 1.25rem;flex-wrap:wrap}
+.product-shot img{width:140px;height:auto;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,.12);background:#111}
+.product-caption{flex:1;min-width:180px;font-size:0.92rem;color:var(--muted);margin:0}
 .eft-widget label{display:block;margin:0.6rem 0 0.2rem;font-weight:600;font-size:0.9rem}
 .eft-widget input{width:100%;padding:0.55rem 0.65rem;border:1px solid #ccc;border-radius:4px;font-size:1rem;box-sizing:border-box}
 .eft-widget button{margin-top:0.75rem;padding:0.65rem 1.25rem;background:var(--accent);color:#fff;border:none;border-radius:4px;font-size:1rem;cursor:pointer;font-weight:600}
@@ -158,6 +166,13 @@ ${opts.bodyHtml}
 
 <section class="eft-widget" id="order" aria-labelledby="order-h">
 <h2 id="order-h">Order the Physical Hardcover – R400 Total</h2>
+<div class="product-shot">
+<picture>
+<source type="image/webp" srcset="/images/dianetics-hardcover.webp">
+<img src="/images/dianetics-hardcover.jpg" width="280" height="448" alt="Dianetics: The Modern Science of Mental Health — hardcover book cover" loading="lazy" decoding="async">
+</picture>
+<p class="product-caption"><strong>Dianetics: The Modern Science of Mental Health</strong> by L. Ron Hubbard (hardcover). Publisher materials state more than 20 million copies sold worldwide and translations into 50 languages. First published 1950.</p>
+</div>
 <p>Book + 24-hour express courier anywhere in major South African metros. Instant EFT. Bank details resolve to your nearest regional fulfillment hub.</p>
 
 <form id="eft-form" novalidate>
@@ -479,7 +494,21 @@ ${opts.bodyHtml}
         'https://en.wikipedia.org/wiki/Dianetics:_The_Modern_Science_of_Mental_Health'
       ],
       description:
-        'Classic self-improvement text first published in 1950. Commercial physical book sale only. Not medical, psychological or clinical advice.'
+        'Classic self-improvement text first published in 1950. Commercial physical book sale only. Not medical, psychological or clinical advice.',
+      image: `${this.config.baseUrl}/images/dianetics-hardcover.jpg`
+    };
+
+    const imageObject = {
+      '@type': 'ImageObject',
+      '@id': `${this.config.baseUrl}/images/dianetics-hardcover.jpg`,
+      url: `${this.config.baseUrl}/images/dianetics-hardcover.jpg`,
+      contentUrl: `${this.config.baseUrl}/images/dianetics-hardcover.jpg`,
+      caption: 'Dianetics: The Modern Science of Mental Health hardcover',
+      name: 'Dianetics hardcover product image',
+      width: '800',
+      height: '1280',
+      encodingFormat: 'image/jpeg',
+      representativeOfPage: opts.isPillar
     };
 
     const webPage: Record<string, unknown> = {
@@ -541,6 +570,7 @@ ${opts.bodyHtml}
       placeEntity,
       org,
       book,
+      imageObject,
       {
         '@type': 'Offer',
         name: 'Dianetics Hardcover + Express Delivery SA',
